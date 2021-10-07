@@ -9,7 +9,7 @@ int main()
 	getchar();
 	int way[1000]; 
 
-	// ¹è¿­¿¡ Á¤¼öÀÔ·Â¹Þ´Â °úÁ¤ ÀÌ·¸°Ô ¾²¸é ¶ç¿ö½áµµ ¹è¿­¿¡ Àß µé¾î°£´Ù
+	// ë°°ì—´ì— ì •ìˆ˜ìž…ë ¥ë°›ëŠ” ê³¼ì • ì´ë ‡ê²Œ ì“°ë©´ ë„ì›Œì¨ë„ ë°°ì—´ì— ìž˜ ë“¤ì–´ê°„ë‹¤
 	for (i = 0;i < N;i++)
 	{
 		int data;
@@ -18,12 +18,12 @@ int main()
 	}
 
 	idx = 0;
-	//idx¸¦ ¾´ ÀÌÀ¯´Â while¹®À» ¾µ¶§ ÀÌÇØÇÏ±â ½±°Ô ÀÎµ¦½º°ªÀ» º¯°æ½ÃÅ°±â À§ÇØ
+	//idxë¥¼ ì“´ ì´ìœ ëŠ” whileë¬¸ì„ ì“¸ë•Œ ì´í•´í•˜ê¸° ì‰½ê²Œ ì¸ë±ìŠ¤ê°’ì„ ë³€ê²½ì‹œí‚¤ê¸° ìœ„í•´
 	for (i = 0;i < N-1;i++)
 	{
-		//idx¿Í i¸¦ °è¼Ó ¸ÂÃçÁÖ´Â°Ô Áß¿ä
+		//idxì™€ ië¥¼ ê³„ì† ë§žì¶°ì£¼ëŠ”ê²Œ ì¤‘ìš”
 		idx = i;
-		// °ªÀÌ °°À¸¸é ¿À¸£¸·±æÀº ³¡³­´Ù 
+		// ê°’ì´ ê°™ìœ¼ë©´ ì˜¤ë¥´ë§‰ê¸¸ì€ ëë‚œë‹¤ 
 		while (way[idx] < way[idx + 1])
 		{
 			num = way[idx + 1] - way[idx];
@@ -31,12 +31,12 @@ int main()
 			idx++;
 		}
 		i = idx;
-		//Çö ¿À¸£¸·±æÀÇ ³ôÀÌ°¡ Àü ¿À¸£¸·±æ ³ôÀÌº¸´Ù ³ôÀ¸¸é ÃÖ´ë³ôÀÌ °»½Å
+		//í˜„ ì˜¤ë¥´ë§‰ê¸¸ì˜ ë†’ì´ê°€ ì „ ì˜¤ë¥´ë§‰ê¸¸ ë†’ì´ë³´ë‹¤ ë†’ìœ¼ë©´ ìµœëŒ€ë†’ì´ ê°±ì‹ 
 		if (max_diff < diff)
 		{
 			max_diff = diff;
 		}
-		//³¡³¯¶§¸¶´Ù diff 0À¸·Î ÃÊ±âÈ­
+		//ëë‚ ë•Œë§ˆë‹¤ diff 0ìœ¼ë¡œ ì´ˆê¸°í™”
 		diff = 0;
 
 	}
