@@ -2,14 +2,14 @@
 
 using namespace std;
 
-int d[1001][10]; // ±æÀÌ°¡ nÀÌ°í ³¡ÀÚ¸®°¡ i(0 <= i && i < 10) ÀÎ °æ¿ìÀÇ ¼ö
+int d[1001][10]; // ê¸¸ì´ê°€ nì´ê³  ëìžë¦¬ê°€ i(0 <= i && i < 10) ì¸ ê²½ìš°ì˜ ìˆ˜
 
 int main()
 {
 	int n;
 	cin >> n;
 
-	// ±æÀÌ°¡ 1ÀÏ¶§´Â ¹æ¹ýÀÌ 1°¡Áö ¹Û¿¡ ¾ø´Ù
+	// ê¸¸ì´ê°€ 1ì¼ë•ŒëŠ” ë°©ë²•ì´ 1ê°€ì§€ ë°–ì— ì—†ë‹¤
 
 	for (int i = 0; i < 10; i++)
 	{
