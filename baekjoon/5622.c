@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//¾ËÆÄºªÀ» ¼ýÀÚ·Î º¯È¯(°¢ ¼ýÀÚ¿¡ +2¸¦ ÇØ¼­ ¸®ÅÏÇÔ 1 ´©¸£´Âµ¥ 2ÃÊ°É¸®´Ï±î)
+//ì•ŒíŒŒë²³ì„ ìˆ«ìžë¡œ ë³€í™˜(ê° ìˆ«ìžì— +2ë¥¼ í•´ì„œ ë¦¬í„´í•¨ 1 ëˆ„ë¥´ëŠ”ë° 2ì´ˆê±¸ë¦¬ë‹ˆê¹Œ)
 int ChartoNum(char tok)
 {
 	switch (tok)
