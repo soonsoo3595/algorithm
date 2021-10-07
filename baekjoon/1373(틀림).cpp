@@ -11,25 +11,25 @@ int main()
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	string b_num; // ÀÌÁø¼ö¸¦ ÀÔ·Â¹ÞÀ» string °´Ã¼ b_num
+	string b_num; // ì´ì§„ìˆ˜ë¥¼ ìž…ë ¥ë°›ì„ string ê°ì²´ b_num
 	cin >> b_num;
-	int decimal = 0; // ÀÌÁø¼ö¸¦ ½ÊÁø¼ö·Î º¯È¯ÇÑ °á°ú¸¦ ´ãÀ» º¯¼ö
+	int decimal = 0; // ì´ì§„ìˆ˜ë¥¼ ì‹­ì§„ìˆ˜ë¡œ ë³€í™˜í•œ ê²°ê³¼ë¥¼ ë‹´ì„ ë³€ìˆ˜
 	int length = b_num.size();
-	int num = pow(2, length - 1); // ÀÌÁø¼ö¸¦ º¯È¯ÇÏ±â À§ÇÑ µµ±¸
+	int num = pow(2, length - 1); // ì´ì§„ìˆ˜ë¥¼ ë³€í™˜í•˜ê¸° ìœ„í•œ ë„êµ¬
 
 	
 	for (int i = 0; i < length; i++)
 	{
-		if (b_num[i] == '1') // 1ÀÌ¸é ±×¿¡ ¸Â´Â 2ÀÇ °ÅµìÁ¦°öÀ» °öÇØÁØ´Ù
+		if (b_num[i] == '1') // 1ì´ë©´ ê·¸ì— ë§žëŠ” 2ì˜ ê±°ë“­ì œê³±ì„ ê³±í•´ì¤€ë‹¤
 		{
 			decimal += num;
 		}
 		num = num / 2;
 	}
 
-	vector<int> v; // ½ÊÁø¼ö¸¦ ÆÈÁø¹ýÀ¸·Î ´ãÀ» °ø°£
+	vector<int> v; // ì‹­ì§„ìˆ˜ë¥¼ íŒ”ì§„ë²•ìœ¼ë¡œ ë‹´ì„ ê³µê°„
 	
-	if (decimal == 0) // ÀÌ ÄÚµå°¡ ¾øÀ»½Ã ¸¸¾à ½ÊÁø¼ö°¡ 0ÀÌ¸é 0ÀÌ Ç¥ÇöÀÌ ¾ÈµÈ´Ù
+	if (decimal == 0) // ì´ ì½”ë“œê°€ ì—†ì„ì‹œ ë§Œì•½ ì‹­ì§„ìˆ˜ê°€ 0ì´ë©´ 0ì´ í‘œí˜„ì´ ì•ˆëœë‹¤
 	{
 		v.push_back(0);
 	}
