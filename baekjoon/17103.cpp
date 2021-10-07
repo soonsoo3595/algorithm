@@ -13,7 +13,7 @@ int main()
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	// ¿¡¶óÅä½ºÅ×³×½º Ã¼ ¾Ë°í¸®Áò
+	// ì—ë¼í† ìŠ¤í…Œë„¤ìŠ¤ ì²´ ì•Œê³ ë¦¬ì¦˜
 
 	for (int i = 2; i <= MAX; i++)
 	{
@@ -30,26 +30,26 @@ int main()
 	int T;
 	cin >> T;
 
-	// ÀüÃ¼ÀûÀÎ ¾Ë°í¸®ÁòÀº °ñµå¹ÙÈåÀÇ ÃßÃøÀÇ Æ²¿¡¼­ Á¶±İ¾¿ ¼öÁ¤
+	// ì „ì²´ì ì¸ ì•Œê³ ë¦¬ì¦˜ì€ ê³¨ë“œë°”íì˜ ì¶”ì¸¡ì˜ í‹€ì—ì„œ ì¡°ê¸ˆì”© ìˆ˜ì •
 	while (T--)
 	{
 		int n;
 		cin >> n;
 
-		bool state[MAX+1]; // state ¹è¿­ ¼±¾ğ ÀÌÀ¯ : µÎ ¼Ò¼öÀÇ ¼ø¼­°¡ ´Ù¸¥ °ÍÀ» Ä«¿îÆÃ Á¦¿Ü ÇÏ·Á°í
-		memset(state, false, MAX + 1); // state ¹è¿­À» false·Î ÃÊ±âÈ­
+		bool state[MAX+1]; // state ë°°ì—´ ì„ ì–¸ ì´ìœ  : ë‘ ì†Œìˆ˜ì˜ ìˆœì„œê°€ ë‹¤ë¥¸ ê²ƒì„ ì¹´ìš´íŒ… ì œì™¸ í•˜ë ¤ê³ 
+		memset(state, false, MAX + 1); // state ë°°ì—´ì„ falseë¡œ ì´ˆê¸°í™”
 
-		int count = 0; // ÆÄÆ¼¼Ç ¼ö
+		int count = 0; // íŒŒí‹°ì…˜ ìˆ˜
 
 		for (int i = 0; i < pr; i++)
 		{
-			if (n - prime[i] <= 1) // ¼Ò¼ö´Â 2 ÀÌ»óÀÌ¹Ç·Î n - prime[i]°¡ 1 ÀÌÇÏÀÌ¸é Á¶°Ç ¹ş¾î³²
+			if (n - prime[i] <= 1) // ì†Œìˆ˜ëŠ” 2 ì´ìƒì´ë¯€ë¡œ n - prime[i]ê°€ 1 ì´í•˜ì´ë©´ ì¡°ê±´ ë²—ì–´ë‚¨
 				break;
 			if ((state[prime[i]] == false) && check[n - prime[i]] == false)
 			{
-				/* ¸¸¾à nÀÌ 8ÀÌ°í prime[i]°¡ 3ÀÌ¸é n - prime[i]°¡ 5ÀÌ¹Ç·Î Á¶°ÇÀÌ ¼º¸³ÇÏ°í
-				state[3]°ú state[5]¿¡ true¸¦ ¹Ù²ãÁÖ¸é ´ÙÀ½¿¡ prime[i]°¡ 5ÀÏ¶§
-				state[5]´Â trueÀÌ¹Ç·Î ÀÌ Á¶°Ç¹®ÀÌ ½ÇÇàÀÌ ¾ÈµÈ´Ù*/
+				/* ë§Œì•½ nì´ 8ì´ê³  prime[i]ê°€ 3ì´ë©´ n - prime[i]ê°€ 5ì´ë¯€ë¡œ ì¡°ê±´ì´ ì„±ë¦½í•˜ê³ 
+				state[3]ê³¼ state[5]ì— trueë¥¼ ë°”ê¿”ì£¼ë©´ ë‹¤ìŒì— prime[i]ê°€ 5ì¼ë•Œ
+				state[5]ëŠ” trueì´ë¯€ë¡œ ì´ ì¡°ê±´ë¬¸ì´ ì‹¤í–‰ì´ ì•ˆëœë‹¤*/
 
 				state[prime[i]] = true; 
 				state[n - prime[i]] = true;
