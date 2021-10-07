@@ -3,11 +3,11 @@
 
 typedef struct _Stack
 {
-	int Data[10000]; // µ¥ÀÌÅÍ ´ãÀ» ±×¸©
-	int topindex; // ½ºÅÃÀÇ ¸Ç À§ µ¥ÀÌÅÍ¸¦ °¡¸®Å°´Â ÀÎµ¦½º -> -1ÀÌ¶ó¸é ½ºÅÃÀÌ ºñ¾îÀÖ´Â°Í
+	int Data[10000]; // ë°ì´í„° ë‹´ì„ ê·¸ë¦‡
+	int topindex; // ìŠ¤íƒì˜ ë§¨ ìœ„ ë°ì´í„°ë¥¼ ê°€ë¦¬í‚¤ëŠ” ì¸ë±ìŠ¤ -> -1ì´ë¼ë©´ ìŠ¤íƒì´ ë¹„ì–´ìžˆëŠ”ê²ƒ
 }Stack;
 
-//ÇÔ¼ö ¿øÇü ¼±¾ð
+//í•¨ìˆ˜ ì›í˜• ì„ ì–¸
 void Stackinit(Stack* s);
 void push(Stack* s, int num);
 void pop(Stack* s);
@@ -17,7 +17,7 @@ void top(Stack* s);
 
 int main()
 {
-	int N; // ¸í·É °³¼ö º¯¼ö ¼±¾ð
+	int N; // ëª…ë ¹ ê°œìˆ˜ ë³€ìˆ˜ ì„ ì–¸
 	Stack s; 
 	Stackinit(&s);
 	int i;
@@ -50,12 +50,12 @@ int main()
 	return 0;
 }
 
-void push(Stack *s, int num) // topindex¸¦ 1 Áõ°¡½ÃÄÑ ¹è¿­ÀÇ 0¹øÂ°¸¦ °¡¸®Å°°Ô ÇÑµÚ µ¥ÀÌÅÍ push
+void push(Stack *s, int num) // topindexë¥¼ 1 ì¦ê°€ì‹œì¼œ ë°°ì—´ì˜ 0ë²ˆì§¸ë¥¼ ê°€ë¦¬í‚¤ê²Œ í•œë’¤ ë°ì´í„° push
 {
 	s->topindex += 1;
 	s->Data[s->topindex] = num;
 }
-void pop(Stack *s) // ¸Ç À§¿¡ ÀÖ´Â µ¥ÀÌÅÍ¸¦ ²¨³½ ÈÄ topindex¸¦ -1 °¨¼Ò½ÃÅ²´Ù
+void pop(Stack *s) // ë§¨ ìœ„ì— ìžˆëŠ” ë°ì´í„°ë¥¼ êº¼ë‚¸ í›„ topindexë¥¼ -1 ê°ì†Œì‹œí‚¨ë‹¤
 {
 	if (s->topindex == -1) {
 		printf("-1\n");
@@ -64,11 +64,11 @@ void pop(Stack *s) // ¸Ç À§¿¡ ÀÖ´Â µ¥ÀÌÅÍ¸¦ ²¨³½ ÈÄ topindex¸¦ -1 °¨¼Ò½ÃÅ²´Ù
 	printf("%d\n", s->Data[s->topindex]);
 	s->topindex -= 1;
 }
-void size(Stack *s) // topindex+1ÀÌ »ç½Ç »ó ½ºÅÃÀÇ µ¥ÀÌÅÍ °³¼öÀÓ
+void size(Stack *s) // topindex+1ì´ ì‚¬ì‹¤ ìƒ ìŠ¤íƒì˜ ë°ì´í„° ê°œìˆ˜ìž„
 {
 	printf("%d\n", s->topindex + 1);
 }
-int empty(Stack* s) // topindex°¡ -1ÀÌ¸é empty »óÅÂ
+int empty(Stack* s) // topindexê°€ -1ì´ë©´ empty ìƒíƒœ
 {
 	if (s->topindex == -1) {
 		return 1;
@@ -77,7 +77,7 @@ int empty(Stack* s) // topindex°¡ -1ÀÌ¸é empty »óÅÂ
 		return 0;
 	}
 }
-void top(Stack* s) // topindex°¡ °¡¸®Å°´Â°Ô top¿¡ ÀÖ´Â µ¥ÀÌÅÍ
+void top(Stack* s) // topindexê°€ ê°€ë¦¬í‚¤ëŠ”ê²Œ topì— ìžˆëŠ” ë°ì´í„°
 { 
 	if (empty(s)) {
 		printf("-1\n");
@@ -87,7 +87,7 @@ void top(Stack* s) // topindex°¡ °¡¸®Å°´Â°Ô top¿¡ ÀÖ´Â µ¥ÀÌÅÍ
 		
 }
 
-void Stackinit(Stack* s) // ½ºÅÃ ÃÊ±âÈ­ topindex¸¦ -1·Î ¹Ù²ã¼­ ºñ¾îÀÖ´Ù´Â°É Ç¥Çö
+void Stackinit(Stack* s) // ìŠ¤íƒ ì´ˆê¸°í™” topindexë¥¼ -1ë¡œ ë°”ê¿”ì„œ ë¹„ì–´ìžˆë‹¤ëŠ”ê±¸ í‘œí˜„
 {
 	s->topindex = -1;
 }
